@@ -1,0 +1,33 @@
+# Redis Manager Configuration File
+# Copy this file to config.toml and modify as needed
+# Environment variables take precedence over this file
+
+[server]
+# Server listening port
+# Environment variable: SERVER_PORT or PORT
+port = "8080"
+
+# Server listening host
+# Environment variable: SERVER_HOST
+host = "0.0.0.0"
+
+[database]
+# SQLite database file path
+# Environment variable: DB_PATH
+path = "./data/redis_manager.db"
+
+[security]
+# AES-256 encryption key for connection passwords (32 bytes)
+# Can be hex-encoded, base64-encoded, or raw string
+# If not set, a random key will be generated (not recommended for production)
+# Environment variable: ENCRYPTION_KEY
+encryption_key = ""
+
+# Default admin username (created on first run if no users exist)
+# Environment variable: DEFAULT_ADMIN_USER
+default_admin_user = "admin"
+
+# Default admin password (created on first run if no users exist)
+# Must meet password requirements: 8+ chars, uppercase, lowercase, number
+# Environment variable: DEFAULT_ADMIN_PASS
+default_admin_pass = "Admin@123"

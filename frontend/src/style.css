@@ -1,0 +1,210 @@
+/* 主题变量 - 浅色模式 */
+:root {
+  --theme-primary-color: #409eff;
+  --theme-font-size: 14px;
+  --theme-font-family: system-ui, -apple-system, sans-serif;
+  --theme-border-radius: 8px;
+  
+  --bg-color: #f5f7fa;
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #e4e7ed;
+  
+  --text-color-primary: #303133;
+  --text-color-regular: #606266;
+  --text-color-secondary: #909399;
+  
+  --border-color: #dcdfe6;
+  --border-color-light: #e4e7ed;
+  
+  --shadow-light: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 深色模式 */
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --bg-color-light: #242424;
+  --bg-color-dark: #141414;
+  
+  --text-color-primary: #e5e5e5;
+  --text-color-regular: #b3b3b3;
+  --text-color-secondary: #808080;
+  
+  --border-color: #3a3a3a;
+  --border-color-light: #2a2a2a;
+  
+  --shadow-light: 0 2px 12px rgba(0, 0, 0, 0.3);
+  
+  /* Element Plus 深色模式覆盖 */
+  --el-bg-color: #242424;
+  --el-bg-color-page: #1a1a1a;
+  --el-bg-color-overlay: #2a2a2a;
+  --el-text-color-primary: #e5e5e5;
+  --el-text-color-regular: #b3b3b3;
+  --el-text-color-secondary: #808080;
+  --el-text-color-placeholder: #606060;
+  --el-border-color: #3a3a3a;
+  --el-border-color-light: #2a2a2a;
+  --el-border-color-lighter: #252525;
+  --el-fill-color: #303030;
+  --el-fill-color-light: #262626;
+  --el-fill-color-lighter: #1f1f1f;
+  --el-fill-color-blank: #242424;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--theme-font-family);
+  font-size: var(--theme-font-size);
+  background-color: var(--bg-color);
+  color: var(--text-color-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#app {
+  height: 100%;
+}
+
+/* 紧凑模式 */
+.compact-mode {
+  --el-component-size: 28px;
+  --el-component-size-small: 24px;
+}
+
+.compact-mode .el-button {
+  padding: 6px 12px;
+}
+
+.compact-mode .el-input__inner {
+  height: 28px;
+}
+
+.compact-mode .el-table .cell {
+  padding: 4px 8px;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color-secondary);
+}
+
+/* Element Plus 覆盖 */
+.el-table .cell {
+  padding: 8px 12px;
+}
+
+.el-dialog__body {
+  padding: 20px;
+}
+
+/* 深色模式下的组件样式调整 */
+[data-theme="dark"] .app-header {
+  background: var(--bg-color-light);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .sidebar,
+[data-theme="dark"] .key-panel,
+[data-theme="dark"] .detail-panel {
+  background: var(--bg-color-light);
+}
+
+[data-theme="dark"] .connection-sidebar {
+  background: var(--bg-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .sidebar-header {
+  background: var(--bg-color-light);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .connection-header:hover {
+  background: var(--bg-color-dark);
+}
+
+[data-theme="dark"] .connection-header.active {
+  background: rgba(64, 158, 255, 0.1);
+}
+
+[data-theme="dark"] .database-item:hover {
+  background: var(--bg-color-dark);
+}
+
+[data-theme="dark"] .database-item.active {
+  background: rgba(64, 158, 255, 0.1);
+}
+
+[data-theme="dark"] .detail-header {
+  background: var(--bg-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .key-list-header {
+  background: var(--bg-color-light);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .key-item:hover {
+  background: var(--bg-color-dark);
+}
+
+[data-theme="dark"] .key-item.active {
+  background: rgba(64, 158, 255, 0.1);
+}
+
+/* 卡片化设计 */
+.card {
+  background: var(--bg-color-light);
+  border-radius: var(--theme-border-radius);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 响应式布局 */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 200px !important;
+  }
+  
+  .key-panel {
+    width: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    flex-direction: column !important;
+  }
+  
+  .sidebar,
+  .key-panel,
+  .detail-panel {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
